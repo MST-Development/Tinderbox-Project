@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2016. Nov 28. 11:28
+-- Létrehozás ideje: 2016. Nov 28. 15:41
 -- Kiszolgáló verziója: 5.6.26
 -- PHP verzió: 5.5.28
 
