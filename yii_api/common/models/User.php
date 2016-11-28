@@ -1,10 +1,18 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Senk
+ * Date: 11/28/2016
+ * Time: 10:56 AM
+ */
+
 namespace common\models;
 
 use Yii;
 use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
+use yii\web\ForbiddenHttpException;
 use yii\web\IdentityInterface;
 
 /**
@@ -47,8 +55,8 @@ class User extends ActiveRecord implements IdentityInterface
     }
 
     /**
-      * @inheritdoc
-      */
+     * @inheritdoc
+     */
     public function rules()
     {
         return [
@@ -73,7 +81,8 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public static function findIdentityByAccessToken($token, $type = null)
     {
-        throw new NotSupportedException('"findIdentityByAccessToken" is not implemented.');
+        //throw new NotSupportedException('"findIdentityByAccessToken" is not implemented.');
+        return static::findOne(['auth_key' => $token]);
     }
 
     /**
@@ -176,5 +185,16 @@ class User extends ActiveRecord implements IdentityInterface
     public function removePasswordResetToken()
     {
         $this->password_reset_token = null;
+    }
+
+    public static function getUserIdentity($username = null, $password = null)
+    {
+        //find and authenticate user here
+        $user = self::findByUsername($username);
+        if($user->validatePassword($password)){
+            return $user;
+        }else{
+            throw new ForbiddenHttpException('Wrong credientals');
+        }
     }
 }

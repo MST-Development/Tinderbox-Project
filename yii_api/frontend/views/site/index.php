@@ -1,6 +1,8 @@
 <?php
 /* @var $this yii\web\View */
 $this->title = 'My Yii Application';
+
+echo Yii::$app->getSecurity()->generatePasswordHash('test');
 ?>
 <div class="site-index">
 
