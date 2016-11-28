@@ -4,7 +4,7 @@ use \yii\db\ActiveRecord;
 /**
  * shift Model
  */
-class shift extends ActiveRecord
+class Shift extends ActiveRecord
 {
 	/**
 	 * @inheritdoc
