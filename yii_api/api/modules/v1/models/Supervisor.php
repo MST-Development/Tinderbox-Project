@@ -13,7 +13,7 @@ class Supervisor extends ActiveRecord
 {
     public static function tableName()
     {
-        return 'supervisor';
+        return '{{%supervisor}}';;
     }
     public function rules()
     {

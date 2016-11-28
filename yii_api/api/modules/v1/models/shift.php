@@ -11,7 +11,7 @@ class Shift extends ActiveRecord
 	 */
 	public static function tableName()
 	{
-		return 'shift';
+		return '{{%shift}}';;
 	}
 
     /**

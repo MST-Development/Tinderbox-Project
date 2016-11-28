@@ -11,7 +11,7 @@ class Information extends ActiveRecord
 	 */
 	public static function tableName()
 	{
-		return 'information';
+		return '{{%information}}';;
 	}
 
     /**

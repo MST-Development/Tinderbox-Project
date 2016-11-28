@@ -11,7 +11,7 @@ class Faq extends ActiveRecord
      */
     public static function tableName()
     {
-        return 'faq';
+        return '{{%faq}}';;
     }
 
     /**
