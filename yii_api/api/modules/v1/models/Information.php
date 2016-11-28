@@ -2,9 +2,9 @@
 namespace api\modules\v1\models;
 use \yii\db\ActiveRecord;
 /**
- * Announcement Model
+ * Information Model
  */
-class Announcement extends ActiveRecord
+class Information extends ActiveRecord
 {
 	/**
 	 * @inheritdoc
