@@ -59,6 +59,10 @@ return [
                 [
                     'class' => 'yii\rest\UrlRule',
                     'controller' => 'v1/shift'
+                ],
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'v1/user'
                 ]
             ],        
         ],
