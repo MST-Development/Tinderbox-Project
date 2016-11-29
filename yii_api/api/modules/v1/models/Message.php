@@ -19,7 +19,7 @@ class Message extends ActiveRecord
     {
         return [
             [['id'], 'integer'],
-            [['firstname', 'lastname', 'date', 'content', 'sender', 'recipient'], 'required']
+            [['name', 'date', 'content', 'sender', 'recipient'], 'required']
         ];
     }
 }
