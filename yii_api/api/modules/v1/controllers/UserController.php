@@ -2,6 +2,7 @@
 
 namespace api\modules\v1\controllers;
 
+use yii\data\ActiveDataProvider;
 use yii\rest\ActiveController;
 
 /**
@@ -16,7 +17,10 @@ class UserController extends ActiveController
         $actions = parent::actions();
 
         // disable the "delete" and "create" actions
-        unset($actions['delete'], $actions['create'], $actions['index'], /*$actions['update'],*/ $actions['options']);
+        unset($actions['delete'], $actions['create'], /*$actions['index'],*/ /*$actions['update'],*/ $actions['options']);
+
+        // customize the data provider preparation with the "prepareDataProvider()" method
+        $actions['index']['prepareDataProvider'] = [$this, 'prepareDataProvider'];
 
         return $actions;
     }
@@ -25,10 +29,21 @@ class UserController extends ActiveController
     {
         // check if the user can access $action and $model
         // throw ForbiddenHttpException if access should be denied
-        if (($action === 'view') OR ($action === 'update')) {
+        if(($action === 'index') AND (\Yii::$app->user->isGuest)){
+            throw new \yii\web\ForbiddenHttpException(sprintf('You must login. -> ', $action));
+        }elseif(($action === 'view') OR ($action === 'update')) {
             if ($model->id !== \Yii::$app->user->id)
-                throw new \yii\web\ForbiddenHttpException(sprintf('You can only your own profile.', $action));
+                throw new \yii\web\ForbiddenHttpException(sprintf('You can only your own profile. -> ', $action));
         }
+    }
+
+    public function prepareDataProvider(){
+    /* @var $modelClass \yii\db\BaseActiveRecord */
+        $modelClass = $this->modelClass;
+
+        return new ActiveDataProvider([
+            'query' => $modelClass::find()->where(['id' => \Yii::$app->user->id]),
+        ]);
     }
 }
 
