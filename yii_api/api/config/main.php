@@ -12,9 +12,13 @@ return [
     'basePath' => dirname(__DIR__),    
     'bootstrap' => ['log'],
     'modules' => [
+        'auth' => [
+            'basePath' => '@app/modules/auth',
+            'class' => 'api\modules\auth\AuthModule'
+        ],
         'v1' => [
             'basePath' => '@app/modules/v1',
-            'class' => 'api\modules\v1\Module'
+            'class' => 'api\modules\v1\v1Module'
         ]
     ],
     'components' => [        
@@ -59,6 +63,10 @@ return [
                 [
                     'class' => 'yii\rest\UrlRule',
                     'controller' => 'v1/shift'
+                ],
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'auth/user'
                 ]
             ],        
         ],

@@ -8,6 +8,7 @@
 
 namespace common\models;
 
+use Symfony\Component\Finder\Exception\AccessDeniedException;
 use Yii;
 use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
@@ -74,6 +75,26 @@ class User extends ActiveRecord implements IdentityInterface
     public static function findIdentity($id)
     {
         return static::findOne(['id' => $id, 'status' => self::STATUS_ACTIVE]);
+    }
+
+    public static function getUserIdentity($username, $password, $token = null)
+    {
+        //authenticate with token
+        /*if(!($token == "")){
+            return self::findIdentityByAccessToken($token);
+        }else{*/
+            //find and authenticate user here
+            if((!($username == "")) AND (!($password == ""))){
+                $user = self::findByUsername($username);
+                if($user->validatePassword($password)){
+                    return $user;
+                }else{
+                    throw new ForbiddenHttpException('Wrong credientals');
+                }
+            }else{
+                throw new ForbiddenHttpException('Not authorized');
+            }
+      //  }
     }
 
     /**
@@ -187,14 +208,4 @@ class User extends ActiveRecord implements IdentityInterface
         $this->password_reset_token = null;
     }
 
-    public static function getUserIdentity($username = null, $password = null)
-    {
-        //find and authenticate user here
-        $user = self::findByUsername($username);
-        if($user->validatePassword($password)){
-            return $user;
-        }else{
-            throw new ForbiddenHttpException('Wrong credientals');
-        }
-    }
 }

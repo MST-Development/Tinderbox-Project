@@ -11,7 +11,7 @@ class Announcement extends ActiveRecord
 	 */
 	public static function tableName()
 	{
-		return 'announcement';
+		return '{{%announcement}}';;
 	}
 
     /**
