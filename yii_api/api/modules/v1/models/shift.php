@@ -20,7 +20,7 @@ class Shift extends ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'title', 'supervisor', 'date', 'status', 'location', 'time'], 'required']
+            [['id', 'title', 'supervisor', 'date', 'status', 'location'], 'required']
         ];
     }
 }
