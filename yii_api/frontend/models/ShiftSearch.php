@@ -19,7 +19,7 @@ class ShiftSearch extends Shift
     {
         return [
             [['id', 'status'], 'integer'],
-            [['title', 'supervisor', 'date'], 'safe'],
+            [['title', 'supervisor', 'assigned_to', 'date'], 'safe'],
         ];
     }
 
@@ -62,6 +62,7 @@ class ShiftSearch extends Shift
             'id' => $this->id,
             'date' => $this->date,
             'status' => $this->status,
+            'assigned_to' => $this->assigned_to,
         ]);
 
         $query->andFilterWhere(['like', 'title', $this->title])

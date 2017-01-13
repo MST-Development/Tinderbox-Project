@@ -5,7 +5,10 @@ namespace frontend\controllers;
 use Yii;
 use frontend\models\Shift;
 use frontend\models\ShiftSearch;
+use yii\db\Exception;
 use yii\web\Controller;
+use yii\web\ForbiddenHttpException;
+use yii\web\MethodNotAllowedHttpException;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
@@ -36,6 +39,7 @@ class ShiftController extends Controller
     public function actionIndex()
     {
         $searchModel = new ShiftSearch();
+        $searchModel->assigned_to = Yii::$app->user->identity->id;
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,65 +49,57 @@ class ShiftController extends Controller
     }
 
     /**
-     * Displays a single Shift model.
-     * @param integer $id
+     * Accept invitation for a Shift model
+     * @param $id
      * @return mixed
+     * @throws Exception
+     * @throws ForbiddenHttpException
+     * @throws MethodNotAllowedHttpException
+     * @throws NotFoundHttpException
      */
-    public function actionView($id)
-    {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
-    }
-
-    /**
-     * Creates a new Shift model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return mixed
-     */
-    public function actionCreate()
-    {
-        $model = new Shift();
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
-        }
-    }
-
-    /**
-     * Updates an existing Shift model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
-     * @return mixed
-     */
-    public function actionUpdate($id)
-    {
+    public function actionAccept($id){
         $model = $this->findModel($id);
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('update', [
-                'model' => $model,
-            ]);
+        if($model->assigned_to == Yii::$app->user->id){
+            if($model->status === 0){
+                $model->status = 1;
+                if($model->save()){
+                    return $this->actionIndex();
+                }else{
+                    throw new Exception('Can\'t save your answer');
+                }
+            }else{
+                throw new MethodNotAllowedHttpException(Yii::t('frontend', 'This shift cannot be accepted anymore!'));
+            }
+        }else{
+            throw new ForbiddenHttpException('It\'s not your shift dummy!');
         }
     }
 
     /**
-     * Deletes an existing Shift model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
+     * Decline invitation for a Shift model
+     * @param $id
      * @return mixed
+     * @throws Exception
+     * @throws ForbiddenHttpException
+     * @throws MethodNotAllowedHttpException
+     * @throws NotFoundHttpException
      */
-    public function actionDelete($id)
-    {
-        $this->findModel($id)->delete();
-
-        return $this->redirect(['index']);
+    public function actionDecline($id){
+        $model = $this->findModel($id);
+        if($model->assigned_to == Yii::$app->user->id) {
+            if ($model->stauts === 0) {
+                $model->assigned_to = null;
+                if ($model->save()) {
+                    return $this->actionIndex();
+                } else {
+                    throw new Exception('Can\'t save your answer');
+                }
+            } else {
+                throw new MethodNotAllowedHttpException(Yii::t('frontend', 'This shift cannot be declined anymore!'));
+            }
+        }else{
+            throw new ForbiddenHttpException('It\'s not your shift dummy!');
+        }
     }
 
     /**

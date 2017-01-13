@@ -39,7 +39,18 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'title',
-            'supervisor',
+            [
+                'attribute' => 'supervisor',
+                'value' => function ($model){
+                    return \common\models\User::find()->select('username')->where(['id' => $model->supervisor])->one()->username;
+                },
+            ],
+            [
+                'attribute' => 'assigned_to',
+                'value' => function ($model){
+                    return \common\models\User::find()->select('username')->where(['id' => $model->assigned_to])->one()->username;
+                },
+            ],
             'date',
             [
                 'attribute'=> 'status',

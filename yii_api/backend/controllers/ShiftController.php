@@ -5,6 +5,7 @@ namespace backend\controllers;
 use Yii;
 use app\models\Shift;
 use app\models\ShiftSearch;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -20,6 +21,21 @@ class ShiftController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['index', 'update', 'create', 'delete', 'view'],
+                        'allow' => true,
+                        'roles' => ['admin'],
+                    ],
+                    [
+                        'actions' => ['index', 'update', 'create', 'delete', 'view'],
+                        'allow' => false,
+                        'roles' => ['*'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

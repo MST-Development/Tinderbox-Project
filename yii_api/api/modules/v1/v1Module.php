@@ -19,5 +19,6 @@ class v1Module extends \yii\base\Module
     {
         parent::init();
         \Yii::$app->user->enableSession = false;
+
     }
 }

@@ -19,7 +19,7 @@ class ShiftSearch extends Shift
     {
         return [
             [['id', 'status'], 'integer'],
-            [['title', 'supervisor', 'date'], 'safe'],
+            [['title', 'supervisor', 'assigned_to', 'date'], 'safe'],
         ];
     }
 
@@ -65,7 +65,8 @@ class ShiftSearch extends Shift
         ]);
 
         $query->andFilterWhere(['like', 'title', $this->title])
-            ->andFilterWhere(['like', 'supervisor', $this->supervisor]);
+            ->andFilterWhere(['like', 'supervisor', $this->supervisor])
+            ->andFilterWhere(['like', 'assigned_to', $this->assigned_to]);
 
         return $dataProvider;
     }

@@ -1,0 +1,1 @@
+[01-Jan-2017 14:34:36 UTC] PHP Fatal error:  Class 'yii\base\Module' not found in /home/mstdev/public_html/eal/tinderbox/api/modules/v1/v1Module.php on line 6

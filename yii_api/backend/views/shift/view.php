@@ -30,9 +30,33 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'title',
-            'supervisor',
+            [
+                'attribute'=>'supervisor',
+                'value'=> \common\models\User::find()->select('username')->where(['id' => $model->supervisor])->one()->username,
+            ],
             'date',
             'status',
+            /*[
+                'attribute'=>'status',
+                'format' => "raw",
+                'value'=> function ($model){
+                    switch($model->status){
+                        case 0:
+                            return "Invitation";
+                            break;
+                        case 1:
+                            return "Pending";
+                            break;
+                        case 2:
+                            return "Accepted";
+                            break;
+                    }
+                },
+            ],*/
+            [
+                'attribute'=>'assigned_to',
+                'value' => \common\models\User::find()->select('username')->where(['id' => $model->assigned_to])->one()->username,
+            ],
         ],
     ]) ?>
 

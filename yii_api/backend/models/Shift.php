@@ -31,8 +31,8 @@ class Shift extends \yii\db\ActiveRecord
         return [
             [['title', 'supervisor', 'date', 'status'], 'required'],
             [['date'], 'safe'],
-            [['status'], 'integer'],
-            [['title', 'supervisor'], 'string', 'max' => 50],
+            [['status', 'supervisor', 'assigned_to'], 'integer'],
+            [['title'], 'string', 'max' => 50],
         ];
     }
 

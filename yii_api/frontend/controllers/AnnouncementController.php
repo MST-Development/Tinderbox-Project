@@ -35,6 +35,7 @@ class AnnouncementController extends Controller
      */
     public function actionIndex()
     {
+
         $searchModel = new AnnouncementSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 

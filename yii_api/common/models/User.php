@@ -77,24 +77,18 @@ class User extends ActiveRecord implements IdentityInterface
         return static::findOne(['id' => $id, 'status' => self::STATUS_ACTIVE]);
     }
 
-    public static function getUserIdentity($username, $password, $token = null)
+    public static function getUserIdentity($username, $password)
     {
-        //authenticate with token
-        /*if(!($token == "")){
-            return self::findIdentityByAccessToken($token);
-        }else{*/
-            //find and authenticate user here
-            if((!($username == "")) AND (!($password == ""))){
-                $user = self::findByUsername($username);
-                if($user->validatePassword($password)){
-                    return $user;
-                }else{
-                    throw new ForbiddenHttpException('Wrong credientals');
-                }
+        if((!($username == "")) AND (!($password == ""))){
+            $user = self::findByUsername($username);
+            if($user->validatePassword($password)){
+                return $user;
             }else{
-                throw new ForbiddenHttpException('Not authorized');
+                throw new ForbiddenHttpException('Wrong credientals');
             }
-      //  }
+        }else{
+            throw new ForbiddenHttpException('Not authorized');
+        }
     }
 
     /**
