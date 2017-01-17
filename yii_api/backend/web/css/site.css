@@ -1,91 +1,140 @@
-html,
-body {
-    height: 100%;
-}
+/* Login css stuff */
 
-.wrap {
-    min-height: 100%;
-    height: auto;
-    margin: 0 auto -60px;
-    padding: 0 0 60px;
+.page-site-login{
+    background-image: url('../images/login_bg.jpg');
+    background-position: center;
+    background-size: cover;
 }
-
-.wrap > .container {
-    padding: 70px 15px 20px;
-}
-
-.footer {
-    height: 60px;
-    background-color: #f5f5f5;
-    border-top: 1px solid #ddd;
-    padding-top: 20px;
-}
-
-.jumbotron {
+.site-login{
     text-align: center;
-    background-color: transparent;
+}
+.site-logo{
+    border-radius: 5px;
+}
+.site-login-form{
+    float: none;
 }
 
-.jumbotron .btn {
-    font-size: 21px;
-    padding: 14px 24px;
+/*input:focus{
+    color: rgba(4,53,64,0.9) !important;
+    font-size: 1.5em !important;
 }
-
-.not-set {
-    color: #c55;
-    font-style: italic;
+input{
+    letter-spacing: 2px;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center !important;
 }
+input::-webkit-input-placeholder, input:-moz-placeholder, input:-ms-input-placeholder, input::-moz-placeholder {
+    letter-spacing: 2px;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center !important;
+}
+*/
 
-/* add sorting icons to gridview sort links */
-a.asc:after, a.desc:after {
+/* Main menu css stuff */
+.page-site-index{
+    background-image: url('../images/index_bg.jpg');
+    background-position: center;
+    background-size: cover;
+}
+#page_menu_content a {
+    background-color: rgba(241,136,121, 0.6);
+    color: #fff9f4;
     position: relative;
-    top: 1px;
+    height: 20%;
+    width: 45%;
     display: inline-block;
-    font-family: 'Glyphicons Halflings';
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    padding-left: 5px;
+    margin-bottom: 1%;
+    border: 2px solid #fff9f4;
 }
 
-a.asc:after {
-    content: /*"\e113"*/ "\e151";
+#page_menu_content a:hover{
+    background-color: rgba(241,136,121,1);
+    color: #fff9f4;
 }
 
-a.desc:after {
-    content: /*"\e114"*/ "\e152";
+#page_menu_content a:nth-child(odd){
+    margin-right: 0.5%;
 }
 
-.sort-numerical a.asc:after {
-    content: "\e153";
+#page_menu_content a:nth-child(even){
+    margin-left: 0.5%;
 }
 
-.sort-numerical a.desc:after {
-    content: "\e154";
+a p{
+    font-size: 2.5vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%,-50%);
 }
 
-.sort-ordinal a.asc:after {
-    content: "\e155";
+a .special{
+    width: 100%;
 }
 
-.sort-ordinal a.desc:after {
-    content: "\e156";
+a p span{
+    display: block !important;
 }
 
-.grid-view th {
-    white-space: nowrap;
+
+
+.banner{
+    text-align: center;
+    height: 20vh;
 }
 
-.hint-block {
-    display: block;
-    margin-top: 5px;
-    color: #999;
+.banner span{
+    font-size: 5vw;
+    position: relative;
+    top: -15vh;
 }
 
-.error-summary {
-    color: #a94442;
-    background: #fdf7f7;
-    border-left: 3px solid #eed3d7;
-    padding: 10px 20px;
-    margin: 0 0 15px 0;
+.banner span:nth-child(even){
+    margin-right: 7.5vw;
+}
+.banner span:nth-child(odd){
+    margin-left: 7.5vw;
+}
+
+#app_logo{
+    width: 15vw;
+    height: 15vh;
+    background: url(../images/logo_white.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    /*display: inline-block;*/
+    margin: auto;
+}
+
+#page_menu_content{
+    text-align: center;
+    height: 60vh;
+}
+
+p .info, p .info-separator{
+    display: inline !important;
+}
+
+p .info-separator{
+    margin-right: 2%;
+    margin-left: 2%;
+}
+@media (max-width: 1000px) {
+    p .info-separator{
+        display: none !important;
+    }
+    p .info:last-of-type{
+        display: none !important;
+    }
+}
+
+@media (max-width: 801px) {
+    .banner span{
+        top: -10vh;
+    }
 }

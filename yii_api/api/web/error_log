@@ -1,0 +1,4 @@
+[29-Nov-2016 15:09:39 UTC] PHP Fatal error:  Call to a member function getHeaders() on a non-object in /home/mstdev/public_html/eal/tinderbox/api/modules/v1/v1Module.php on line 21
+[29-Nov-2016 15:11:47 UTC] PHP Fatal error:  Call to a member function getHeaders() on a non-object in /home/mstdev/public_html/eal/tinderbox/api/modules/v1/v1Module.php on line 21
+[01-Dec-2016 14:33:44 UTC] PHP Fatal error:  Call to a member function validatePassword() on a non-object in /home/mstdev/public_html/eal/tinderbox/common/models/User.php on line 84
+[01-Dec-2016 14:33:51 UTC] PHP Fatal error:  Call to a member function validatePassword() on a non-object in /home/mstdev/public_html/eal/tinderbox/common/models/User.php on line 84

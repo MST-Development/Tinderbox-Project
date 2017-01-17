@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Prophecy\\' => array($vendorDir . '/phpspec/prophecy/src'),
+    'Michelf' => array($vendorDir . '/michelf/php-markdown', $vendorDir . '/michelf/php-smartypants'),
     'HTMLPurifier' => array($vendorDir . '/ezyang/htmlpurifier/library'),
     'Diff' => array($vendorDir . '/phpspec/php-diff/lib'),
     'Behat\\Gherkin' => array($vendorDir . '/behat/gherkin/src'),

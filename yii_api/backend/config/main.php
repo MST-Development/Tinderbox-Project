@@ -11,7 +11,14 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
-    'modules' => [],
+    'modules' => [
+        'gridview' =>  [
+            'class' => '\kartik\grid\Module'
+        ],
+        'markdown' => [
+            'class' => 'kartik\markdown\Module',
+        ],
+    ],
     'components' => [
         'user' => [
             'identityClass' => 'common\models\User',
@@ -28,6 +35,17 @@ return [
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
+        ],
+        'i18n' => [
+            'translations' => [
+                'backend*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'fileMap' => [
+                        'backend' => 'backend.php',
+                        'app/error' => 'error.php',
+                    ],
+                ],
+            ],
         ],
     ],
     'params' => $params,

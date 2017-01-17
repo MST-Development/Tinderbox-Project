@@ -28,6 +28,17 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+        'i18n' => [
+            'translations' => [
+                'frontend*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'fileMap' => [
+                        'frontend' => 'frontend.php',
+                        'app/error' => 'error.php',
+                    ],
+                ],
+            ],
+        ],
     ],
     'params' => $params,
 ];

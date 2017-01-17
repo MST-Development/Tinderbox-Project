@@ -22,12 +22,44 @@ class ComposerStaticInit67be20606649ca85df6409999e1def8f
             'yii\\faker\\' => 10,
             'yii\\debug\\' => 10,
             'yii\\composer\\' => 13,
+            'yii\\codeception\\' => 16,
             'yii\\bootstrap\\' => 14,
             'yii\\' => 4,
         ),
         'p' => 
         array (
             'phpDocumentor\\Reflection\\' => 25,
+        ),
+        'k' => 
+        array (
+            'kartik\\widgets\\' => 15,
+            'kartik\\typeahead\\' => 17,
+            'kartik\\touchspin\\' => 17,
+            'kartik\\time\\' => 12,
+            'kartik\\switchinput\\' => 19,
+            'kartik\\spinner\\' => 15,
+            'kartik\\sidenav\\' => 15,
+            'kartik\\select2\\' => 15,
+            'kartik\\rating\\' => 14,
+            'kartik\\range\\' => 13,
+            'kartik\\plugins\\fileinput\\' => 25,
+            'kartik\\plugins\\depdrop\\' => 23,
+            'kartik\\mpdf\\' => 12,
+            'kartik\\markdown\\' => 16,
+            'kartik\\helpers\\' => 15,
+            'kartik\\growl\\' => 13,
+            'kartik\\grid\\' => 12,
+            'kartik\\form\\' => 12,
+            'kartik\\file\\' => 12,
+            'kartik\\dialog\\' => 14,
+            'kartik\\detail\\' => 14,
+            'kartik\\depdrop\\' => 15,
+            'kartik\\datetime\\' => 16,
+            'kartik\\date\\' => 12,
+            'kartik\\color\\' => 13,
+            'kartik\\base\\' => 12,
+            'kartik\\alert\\' => 13,
+            'kartik\\affix\\' => 13,
         ),
         'c' => 
         array (
@@ -94,6 +126,10 @@ class ComposerStaticInit67be20606649ca85df6409999e1def8f
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2-composer',
         ),
+        'yii\\codeception\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/yiisoft/yii2-codeception',
+        ),
         'yii\\bootstrap\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap',
@@ -107,6 +143,118 @@ class ComposerStaticInit67be20606649ca85df6409999e1def8f
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+        ),
+        'kartik\\widgets\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widgets',
+        ),
+        'kartik\\typeahead\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-typeahead',
+        ),
+        'kartik\\touchspin\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-touchspin',
+        ),
+        'kartik\\time\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-timepicker',
+        ),
+        'kartik\\switchinput\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-switchinput',
+        ),
+        'kartik\\spinner\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-spinner',
+        ),
+        'kartik\\sidenav\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-sidenav',
+        ),
+        'kartik\\select2\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-select2',
+        ),
+        'kartik\\rating\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-rating',
+        ),
+        'kartik\\range\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-rangeinput',
+        ),
+        'kartik\\plugins\\fileinput\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/bootstrap-fileinput',
+        ),
+        'kartik\\plugins\\depdrop\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/dependent-dropdown',
+        ),
+        'kartik\\mpdf\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-mpdf',
+        ),
+        'kartik\\markdown\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-markdown',
+        ),
+        'kartik\\helpers\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-helpers',
+        ),
+        'kartik\\growl\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-growl',
+        ),
+        'kartik\\grid\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-grid',
+        ),
+        'kartik\\form\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-activeform',
+        ),
+        'kartik\\file\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-fileinput',
+        ),
+        'kartik\\dialog\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-dialog',
+        ),
+        'kartik\\detail\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-detail-view',
+        ),
+        'kartik\\depdrop\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-depdrop',
+        ),
+        'kartik\\datetime\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-datetimepicker',
+        ),
+        'kartik\\date\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-datepicker',
+        ),
+        'kartik\\color\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-colorinput',
+        ),
+        'kartik\\base\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-krajee-base',
+        ),
+        'kartik\\alert\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-alert',
+        ),
+        'kartik\\affix\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-affix',
         ),
         'cebe\\markdown\\' => 
         array (
@@ -190,6 +338,14 @@ class ComposerStaticInit67be20606649ca85df6409999e1def8f
                 0 => __DIR__ . '/..' . '/phpspec/prophecy/src',
             ),
         ),
+        'M' => 
+        array (
+            'Michelf' => 
+            array (
+                0 => __DIR__ . '/..' . '/michelf/php-markdown',
+                1 => __DIR__ . '/..' . '/michelf/php-smartypants',
+            ),
+        ),
         'H' => 
         array (
             'HTMLPurifier' => 
@@ -214,9 +370,24 @@ class ComposerStaticInit67be20606649ca85df6409999e1def8f
     );
 
     public static $classMap = array (
+        'CGIF' => __DIR__ . '/..' . '/mpdf/mpdf/classes/gif.php',
+        'CGIFCOLORTABLE' => __DIR__ . '/..' . '/mpdf/mpdf/classes/gif.php',
+        'CGIFFILEHEADER' => __DIR__ . '/..' . '/mpdf/mpdf/classes/gif.php',
+        'CGIFIMAGE' => __DIR__ . '/..' . '/mpdf/mpdf/classes/gif.php',
+        'CGIFIMAGEHEADER' => __DIR__ . '/..' . '/mpdf/mpdf/classes/gif.php',
+        'CGIFLZW' => __DIR__ . '/..' . '/mpdf/mpdf/classes/gif.php',
+        'FPDF_TPL' => __DIR__ . '/..' . '/setasign/fpdi/fpdf_tpl.php',
+        'FPDI' => __DIR__ . '/..' . '/setasign/fpdi/fpdi.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
         'File_Iterator_Factory' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Factory.php',
+        'FilterASCII85' => __DIR__ . '/..' . '/setasign/fpdi/filters/FilterASCII85.php',
+        'FilterASCIIHexDecode' => __DIR__ . '/..' . '/setasign/fpdi/filters/FilterASCIIHexDecode.php',
+        'FilterLZW' => __DIR__ . '/..' . '/setasign/fpdi/filters/FilterLZW.php',
+        'INDIC' => __DIR__ . '/..' . '/mpdf/mpdf/classes/indic.php',
+        'MYANMAR' => __DIR__ . '/..' . '/mpdf/mpdf/classes/myanmar.php',
+        'OTLdump' => __DIR__ . '/..' . '/mpdf/mpdf/classes/otl_dump.php',
+        'PDFBarcode' => __DIR__ . '/..' . '/mpdf/mpdf/classes/barcode.php',
         'PHPUnit_Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit_Extensions_GroupTestSuite' => __DIR__ . '/..' . '/phpunit/phpunit/src/Extensions/GroupTestSuite.php',
         'PHPUnit_Extensions_PhptTestCase' => __DIR__ . '/..' . '/phpunit/phpunit/src/Extensions/PhptTestCase.php',
@@ -614,6 +785,8 @@ class ComposerStaticInit67be20606649ca85df6409999e1def8f
         'PHP_Token_XOR_EQUAL' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD_FROM' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'SEA' => __DIR__ . '/..' . '/mpdf/mpdf/classes/sea.php',
+        'SVG' => __DIR__ . '/..' . '/mpdf/mpdf/classes/svg.php',
         'SebastianBergmann\\Comparator\\ArrayComparator' => __DIR__ . '/..' . '/sebastian/comparator/src/ArrayComparator.php',
         'SebastianBergmann\\Comparator\\Comparator' => __DIR__ . '/..' . '/sebastian/comparator/src/Comparator.php',
         'SebastianBergmann\\Comparator\\ComparisonFailure' => __DIR__ . '/..' . '/sebastian/comparator/src/ComparisonFailure.php',
@@ -650,7 +823,22 @@ class ComposerStaticInit67be20606649ca85df6409999e1def8f
         'SebastianBergmann\\RecursionContext\\Exception' => __DIR__ . '/..' . '/sebastian/recursion-context/src/Exception.php',
         'SebastianBergmann\\RecursionContext\\InvalidArgumentException' => __DIR__ . '/..' . '/sebastian/recursion-context/src/InvalidArgumentException.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
+        'TTFontFile' => __DIR__ . '/..' . '/mpdf/mpdf/classes/ttfontsuni.php',
+        'TTFontFile_Analysis' => __DIR__ . '/..' . '/mpdf/mpdf/classes/ttfontsuni_analysis.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
+        'UCDN' => __DIR__ . '/..' . '/mpdf/mpdf/classes/ucdn.php',
+        'bmp' => __DIR__ . '/..' . '/mpdf/mpdf/classes/bmp.php',
+        'cssmgr' => __DIR__ . '/..' . '/mpdf/mpdf/classes/cssmgr.php',
+        'directw' => __DIR__ . '/..' . '/mpdf/mpdf/classes/directw.php',
+        'fpdi_pdf_parser' => __DIR__ . '/..' . '/setasign/fpdi/fpdi_pdf_parser.php',
+        'grad' => __DIR__ . '/..' . '/mpdf/mpdf/classes/grad.php',
+        'mPDF' => __DIR__ . '/..' . '/mpdf/mpdf/mpdf.php',
+        'meter' => __DIR__ . '/..' . '/mpdf/mpdf/classes/meter.php',
+        'mpdfform' => __DIR__ . '/..' . '/mpdf/mpdf/classes/mpdfform.php',
+        'otl' => __DIR__ . '/..' . '/mpdf/mpdf/classes/otl.php',
+        'pdf_context' => __DIR__ . '/..' . '/setasign/fpdi/pdf_context.php',
+        'tocontents' => __DIR__ . '/..' . '/mpdf/mpdf/classes/tocontents.php',
+        'wmf' => __DIR__ . '/..' . '/mpdf/mpdf/classes/wmf.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
