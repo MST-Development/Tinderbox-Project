@@ -183,6 +183,9 @@ p .info-separator{
     background-position: center;
     background-size: cover;
 }
+.shift-index a {
+    color: beige;
+}
 .shift-index .container-cent{
     text-align: center;
 }
@@ -239,4 +242,18 @@ p .info-separator{
 }
 .btn-i a{
     color: #fff9f4;
+}
+.btn-i-map {
+    background-color: rgba(139, 199, 185, 1);
+    float: left;
+    width: 50%;
+}
+.btn-i-decline {
+    background-color: rgba(241, 136, 121);
+}
+.btn-i-accept {
+    float: left;
+    background-color: rgba(4, 53, 64, 1);
+    width: 50%;
+    color: beige;
 }

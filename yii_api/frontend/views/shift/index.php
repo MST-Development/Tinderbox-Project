@@ -21,7 +21,10 @@ $dataProvider = $dataProvider->getModels();
 
             <!--<h2>Simple Collapsible</h2>
             <p>Click on the button to toggle between showing and hiding content.</p>-->
-            <button type="button" class="btn btn-info button-iterated" data-toggle="collapse" data-target="#demo-<?= $item->id ?>"><p class="btn-info-date"><?= $item->date ?></p><p class="btn-info-supervisor"><?= \common\models\User::find()->select('username')->where(['id'=>$item->supervisor])->one()->username ?><br><?= $item->location ?></p></button>
+            <button type="button" class="btn btn-info button-iterated" data-toggle="collapse" data-target="#demo-<?= $item->id ?>">
+                <p class="btn-info-date"><?= $item->date ?></p>
+                <p class="btn-info-supervisor"><?= \common\models\User::find()->select('username')->where(['id'=>$item->supervisor])->one()->username ?><br><?= $item->location ?></p>
+            </button>
             <div id="demo-<?= $item->id ?>" class="collapse div-itterated">
                 <?php
                 Switch($item->status){
